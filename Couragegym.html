@@ -13,6 +13,25 @@ body {
   color: white;
 }
 
+/* NAVIGATION */
+nav {
+  background: #000;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #00CFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: orange;
+}
+
 header {
   background: linear-gradient(90deg, #007BFF, #00CFFF);
   padding: 20px;
@@ -24,23 +43,17 @@ header {
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background: #111;
 }
 
 .hero img {
   width: 300px;
   border-radius: 20px;
+  animation: float 3s infinite ease-in-out;
 }
 
-.hero h1 {
-  font-size: 40px;
-  color: #00CFFF;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: auto;
-  color: #ccc;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 .btn {
@@ -57,7 +70,7 @@ header {
   padding: 40px;
 }
 
-.tools {
+.tools, .trainers, .pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
@@ -69,6 +82,11 @@ header {
   border-radius: 15px;
   text-align: center;
   border-top: 4px solid #00CFFF;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
@@ -102,49 +120,75 @@ footer {
 
 <body>
 
-<header>
-  💪 Courage Gym Excess Class
-</header>
+<header>💪 Courage Gym Excess Class</header>
 
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74" alt="Gym Training">
-  <h1>Train With Strength & Courage</h1>
-  <p>Luxury gym training classes for men and women. Build strength, confidence, and a powerful body.</p>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#classes">Classes</a>
+  <a href="#trainers">Trainers</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="hero">
+  <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74" alt="Gym">
+  <h1>Train With Power</h1>
+  <p>Luxury gym for men and women of all backgrounds.</p>
   <button class="btn">Join Now</button>
 </section>
 
-<section class="section">
-  <h2 style="color:orange; text-align:center;">🏋️ Gym Tools & Equipment</h2>
+<section id="classes" class="section">
+  <h2 style="color:orange; text-align:center;">🏋️ Classes</h2>
   <div class="tools">
-
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Weights">
-      <h3>Luxury Weights</h3>
-      <p>High-quality dumbbells and strength equipment.</p>
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+      <h3>Weight Training</h3>
     </div>
-
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Treadmill">
-      <h3>Cardio Machines</h3>
-      <p>Modern treadmills and cardio tools.</p>
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b">
+      <h3>Cardio Fitness</h3>
     </div>
-
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e" alt="Workout">
-      <h3>Training Classes</h3>
-      <p>Group classes for all fitness levels.</p>
+      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e">
+      <h3>Group Classes</h3>
     </div>
-
   </div>
 </section>
 
-<section class="section">
-  <h2 style="color:#00CFFF; text-align:center;">💬 Help Centre</h2>
-  <p style="text-align:center; max-width:600px; margin:auto;">Need help? Send us a message and our team will respond quickly.</p>
+<section id="trainers" class="section">
+  <h2 style="color:#00CFFF; text-align:center;">👨‍🏫 Trainers</h2>
+  <div class="trainers">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1">
+      <h3>Coach Alex</h3>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594737625785-c0c2c7e38fbb">
+      <h3>Coach Sarah</h3>
+    </div>
+  </div>
 </section>
 
-<section class="contact">
-  <h2>Contact Us</h2>
+<section id="pricing" class="section">
+  <h2 style="color:orange; text-align:center;">💰 Pricing</h2>
+  <div class="pricing">
+    <div class="card">
+      <h3>Basic</h3>
+      <p>£20/month</p>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <p>£50/month</p>
+    </div>
+    <div class="card">
+      <h3>VIP</h3>
+      <p>£80/month</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact & Help Centre</h2>
   <p>Email: couragegym@email.com</p>
   <p>Phone: +44 123 456 789</p>
 
