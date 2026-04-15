@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pablo's Apple World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #000000, #1c1c1e);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+    }
+
+    .hero {
+      padding: 80px 20px;
+    }
+
+    .hero img {
+      width: 180px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 20px 0;
+      background: linear-gradient(90deg, #ffffff, #aaaaaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 18px;
+      color: #d1d1d6;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0071e3;
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #005bb5;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #8e8e93;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🍎 Pablo's Apple Website
+  </header>
+
+  <section class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
+    <h1>Welcome to Apple World</h1>
+    <p>This is my beautiful website dedicated to Apple products, innovation, and design.</p>
+    <a href="#features" class="btn">Explore</a>
+  </section>
+
+  <section id="features" class="features">
+    <div class="card">
+      <h2>🍏 iPhone</h2>
+      <p>Discover the latest iPhone with powerful performance and stunning design.</p>
+    </div>
+
+    <div class="card">
+      <h2>💻 Mac</h2>
+      <p>Experience high performance with Apple's Mac lineup for work and creativity.</p>
+    </div>
+
+    <div class="card">
+      <h2>⌚ Watch</h2>
+      <p>Stay connected, healthy, and active with the Apple Watch.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Pablo | Apple Inspired Website
+  </footer>
+
+</body>
+</html>
