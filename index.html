@@ -1,9 +1,65 @@
-<div class="input-box">
-    <span>👤</span>
-    <input type="text" id="username" placeholder="Enter username">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Our Dream Apartment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Our Dream Apartment</h1>
+    <p>Let’s design a modern flat together.</p>
+  </header>
 
-<div class="input-box">
-    <span>🔒</span>
-    <input type="password" id="password" placeholder="Enter password">
-</div>
+  <main>
+    <section class="controls">
+        <h2>Themes</h2>
+<select id="themeSelect">
+  <option value="">None</option>
+  <option value="scandi">Scandi</option>
+  <option value="luxury">Luxury</option>
+  <option value="minimal">Minimal</option>
+</select>
+
+      <h2>Choose a room</h2>
+      <button data-room="living">Living Room</button>
+      <button data-room="kitchen">Kitchen</button>
+      <button data-room="bathroom">Bathroom</button>
+
+      <h2>Wall colour</h2>
+      <input type="color" id="wallColor" value="#f5f5f5" />
+
+      <h2>Floor style</h2>
+      <select id="floorStyle">
+        <option value="wood">Wood</option>
+        <option value="marble">Marble</option>
+        <option value="tile">Tile</option>
+        <h2>Furniture</h2>
+<button class="furniture-btn" data-item="sofa">Sofa</button>
+<button class="furniture-btn" data-item="table">Table</button>
+<button class="furniture-btn" data-item="plant">Plant</button>
+
+      </select>
+    </section>
+
+    <section class="apartment">
+      <div id="living" class="room active">
+        <h3>Living Room</h3>
+        <div class="room-visual"></div>
+      </div>
+
+      <div id="kitchen" class="room">
+        <h3>Kitchen</h3>
+        <div class="room-visual"></div>
+      </div>
+
+      <div id="bathroom" class="room">
+        <h3>Bathroom</h3>
+        <div class="room-visual"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
