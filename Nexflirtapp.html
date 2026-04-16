@@ -1,0 +1,44 @@
+<h2>Sign Up</h2>
+<input id="email" placeholder="Email"><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="signup()">Create Account</button>
+
+<script>
+function signup() {
+    fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        })
+    }).then(() => alert('Account created'));
+}
+</script>
+<h2>Login</h2>
+<input id="email" placeholder="Email"><br>
+<input id="password" type="password"><br>
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+    fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = 'app.html';
+        } else {
+            alert('Wrong login');
+        }
+    });
+}
+</script>
+<h1>Welcome to NexFlirt App</h1>
+<p>Profiles and chat coming soon...</p>
