@@ -161,5 +161,35 @@ themeSelect.addEventListener("change", () => {
   applyStyles();
   saveDesign();
 });
+function makeDraggable(el) {
+  let offsetX = 0, offsetY = 0, isDown = false;
+
+  el.style.cursor = "grab";
+
+  el.addEventListener("mousedown", (e) => {
+    isDown = true;
+    el.style.cursor = "grabbing";
+    const rect = el.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    const parentRect = el.parentElement.getBoundingClientRect();
+    const x = e.clientX - parentRect.left - offsetX;
+    const y = e.clientY - parentRect.top - offsetY;
+    el.style.left = x + "px";
+    el.style.top = y + "px";
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isDown) {
+      isDown = false;
+      el.style.cursor = "grab";
+      saveDesign();
+    }
+  });
+}
 
 
