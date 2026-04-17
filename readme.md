@@ -9,3 +9,6 @@
 - *GIT* GitHub
 - *Data Storage* *Postgres*
 - *Containerization* - *Docker*
+
+#  architectural design
+![screenshot of app](imag1.png)
