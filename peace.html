@@ -4,72 +4,99 @@
     <title>My Portfolio</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: #f5f7fa;
         }
 
         /* NAVBAR */
         .navbar {
-            background: #333;
+            position: sticky;
+            top: 0;
+            background: #222;
             padding: 15px;
             text-align: center;
         }
 
         .navbar a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .navbar a:hover {
-            color: #4CAF50;
+            color: #00bcd4;
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            color: white;
-            padding: 60px 20px;
             text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            color: white;
+            animation: fadeIn 2s ease-in;
         }
 
-        .hero h1 {
-            font-size: 50px;
+        .hero img {
+            width: 130px;
+            border-radius: 50%;
+            margin-top: 20px;
         }
 
         /* SECTIONS */
         .section {
-            padding: 40px;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .section h2 {
-            color: #333;
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .card {
-            background: #f4f4f4;
-            margin: 20px auto;
+            background: white;
+            width: 250px;
             padding: 20px;
-            width: 80%;
             border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
         }
 
         /* BUTTON */
         .btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
+            padding: 10px 25px;
+            background: white;
+            color: #2196f3;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background: #45a049;
+            background: #eee;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
     </style>
 </head>
@@ -81,30 +108,39 @@
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#contact is 0723658769">Contact</a>
+        <a href="#contact">Contact</a>
+        <a href="about.html">Go to About Page</a>
     </div>
 
     <!-- HERO -->
     <div class="hero">
-        <h1>Hello, I'm [Clement]</h1>
-        <img src="imag.jpg2.png" width="120" style="border-radius: 50%;">
-        <p>Beginner Developer 🚀</p>
-        <a href="#contact" class="btn">Hire Me</a>
+        <h1>Hello, I'm <div Clement=""></div></h1>
+        <img src="imag.jpg2.png">
+        <p>Future Software Developer 🚀</p>
+        <a href="#contact" class="btn">Contact Me</a>
     </div>
 
     <!-- ABOUT -->
     <div class="section" id="about">
         <h2>About Me</h2>
-        <div class="card">
-            <p>I am learning web development and building my skills step by step.</p>
+        <div class="cards">
+            <div class="card">
+                <p>I am learning coding step by step.</p>
+                <div class="card">JavaScript (Learning)</div>
+            </div>
+            <div class="card">
+                <p>I enjoy building websites.</p>
+            </div>
         </div>
     </div>
 
     <!-- SKILLS -->
     <div class="section" id="skills">
         <h2>My Skills</h2>
-        <div class="card">
-            <p>HTML | CSS | GitHub</p>
+        <div class="cards">
+            <div class="card">HTML</div>
+            <div class="card">CSS</div>
+            <div class="card">GitHub</div>
         </div>
     </div>
 
@@ -112,9 +148,10 @@
     <div class="section" id="contact">
         <h2>Contact Me</h2>
         <div class="card">
-            <p>Email: clemsho200@gmail.com</p>
+            <p>Email: clemsho200@email.com</p>
         </div>
     </div>
+    
 
 </body>
 </html>
